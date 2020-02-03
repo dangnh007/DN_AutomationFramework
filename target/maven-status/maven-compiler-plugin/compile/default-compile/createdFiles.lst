@@ -1,0 +1,8 @@
+workflows\LoginPage.class
+controllers\SetupSteps.class
+stepdefs\LoginSteps.class
+utils\ReadProperties.class
+controllers\Controller.class
+workflows\RegisterPage.class
+TestRunner.class
+stepdefs\RegisterSteps.class

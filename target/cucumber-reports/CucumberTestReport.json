@@ -1,0 +1,162 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12165727400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SetupSteps.setup()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Login User",
+        "description": "",
+        "id": "user-management;login-user",
+        "after": [
+          {
+            "result": {
+              "duration": 1368282400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SetupSteps.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 112817000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I access to Login Function",
+            "match": {
+              "location": "LoginSteps.goToLoginPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 46800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I login",
+            "match": {
+              "location": "LoginSteps.login()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@mc-0101"
+          }
+        ]
+      }
+    ],
+    "name": "User Management",
+    "description": "As a new user\r\nI want to login",
+    "id": "user-management",
+    "keyword": "Feature",
+    "uri": "Login.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@feature-guru-01"
+      },
+      {
+        "line": 1,
+        "name": "@register"
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12969597000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SetupSteps.setup()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Register New User",
+        "description": "",
+        "id": "user-management;register-new-user",
+        "after": [
+          {
+            "result": {
+              "duration": 979053800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SetupSteps.teardown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 238532100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I access to Register Function",
+            "match": {
+              "location": "RegisterSteps.gotoRegisterPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4792250500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I register",
+            "match": {
+              "location": "RegisterSteps.iRegister()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 6,
+            "name": "@mc-0201"
+          }
+        ]
+      }
+    ],
+    "name": "User Management",
+    "description": "As a user\r\nI want to register",
+    "id": "user-management",
+    "keyword": "Feature",
+    "uri": "Register.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@feature-guru-02"
+      }
+    ]
+  }
+]
