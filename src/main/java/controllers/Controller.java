@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import utils.ReadProperties;
 
 import java.io.File;
@@ -26,18 +27,26 @@ public class Controller {
     }
 
     public void setupController() {
-        browser = systemProperties.getPropertyValue("browser");
+        browser = System.getProperty("browser");
+//        browser = systemProperties.getPropertyValue("browser");
         url = systemProperties.getPropertyValue("url");
-        switch(browser) {
-            case "chrome":
+        if (browser == null){
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver\\chromedriver.exe");
                 driver = new ChromeDriver();
-                break;
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver\\geckodriver.exe");
-                driver = new FirefoxDriver();
-                break;
-            default:
+        }
+        else {
+            switch (browser) {
+                case "firefox":
+                    System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver\\geckodriver.exe");
+                    driver = new FirefoxDriver();
+                    break;
+                case "ie":
+                    System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\drivers\\iedriver\\IEDriverServer.exe");
+                    driver= new InternetExplorerDriver();
+                default:
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver\\chromedriver.exe");
+                    driver = new ChromeDriver();
+            }
         }
         driver.get(url);
         driver.manage().window().maximize();

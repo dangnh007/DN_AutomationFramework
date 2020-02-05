@@ -1,6 +1,9 @@
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import org.junit.runner.RunWith;
 
+@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
         tags = {"~@Ignore"},
@@ -13,26 +16,5 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
         }
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
-//    private TestNGCucumberRunner testNGCucumberRunner;
-//
-//    @BeforeClass(alwaysRun = true)
-//    public void setUpClass(){
-//        testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-//    }
-//
-//    @Test(groups = "cucumber", description = "Run test with Cucumber", dataProvider = "features")
-//    public void feature(CucumberFeatureWrapper cucumberFeature){
-//        testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
-//    }
-//
-//    @DataProvider
-//    public Object[][] features(){
-//        return testNGCucumberRunner.provideFeatures();
-//    }
-//
-//
-//    @AfterClass(alwaysRun = true)
-//    public void tearDownClass(){
-//        testNGCucumberRunner.finish();
-//    }
+
 }
