@@ -3,6 +3,7 @@ package stepdefs;
 import controllers.Controller;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import jdk.jfr.Description;
 import workflows.RegisterPage;
 
 public class RegisterSteps {
@@ -13,7 +14,7 @@ public class RegisterSteps {
         this.controller = controller;
         registerPage = new RegisterPage(this.controller.getDriver());
     }
-
+    @Description("Test")
     @When("^I access to Register Function$")
     public void gotoRegisterPage(){
         registerPage.clickOnAccountDropdown();
