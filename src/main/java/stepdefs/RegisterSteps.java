@@ -14,7 +14,7 @@ public class RegisterSteps {
         this.controller = controller;
         registerPage = new RegisterPage(this.controller.getDriver());
     }
-    @Description("Test")
+    @Description("Test 1232")
     @When("^I access to Register Function$")
     public void gotoRegisterPage(){
         registerPage.clickOnAccountDropdown();
