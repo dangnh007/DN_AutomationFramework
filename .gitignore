@@ -1,2 +1,5 @@
-.idea/
-target/
+/.idea/
+/target/
+/.idea/workspace.xml
+target/cucumber-reports/advanced-reports/cucumber-html-reports/report-tag_register.html
+target/cucumber-reports/advanced-reports/cucumber-html-reports/report-feature_Login-feature.html
