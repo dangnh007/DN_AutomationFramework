@@ -26,6 +26,10 @@ public class Controller {
         this.driver = driver;
     }
 
+    /***
+     * Day la commit 1 and 2
+     */
+
     public void setupController() {
         browser = System.getProperty("browser");
 //        browser = systemProperties.getPropertyValue("browser");
