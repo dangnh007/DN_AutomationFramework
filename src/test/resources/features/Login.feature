@@ -1,4 +1,4 @@
-@feature-guru-01 @register
+@feature-guru-01 @login
 Feature: User Management
   As a user
   I want to login

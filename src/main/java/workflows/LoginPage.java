@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class LoginPage {
 
     private final WebDriver driver;
@@ -16,11 +17,11 @@ public class LoginPage {
         this.loginBtn = driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
     }
 
-    /**
-     * Click on Account list -> then Login button
-     */
-    public void goToLoginPage() {
-
+    public void clickOnAccountDropdown(){
+        accountBtn.click();
+    }
+    public void clickOnLoginButton(){
+        loginBtn.click();
     }
 
 }
