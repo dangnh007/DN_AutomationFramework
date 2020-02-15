@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        tags = {"@mc-0301"},
+        tags = {"~@Ignore"},
         monochrome = true,
         plugin = {
                 "pretty",

@@ -14,7 +14,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver){
         this.driver = driver;
         this.accountBtn = driver.findElement(By.xpath("//span[contains(text(),'Account')]"));
-        this.loginBtn = driver.findElement(By.xpath("//a[contains(text(),'Login')]"));
+        this.loginBtn = driver.findElement(By.xpath("//a[contains(text(),'Log In')]"));
     }
 
     public void clickOnAccountDropdown(){

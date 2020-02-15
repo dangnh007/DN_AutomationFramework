@@ -3,7 +3,6 @@ package stepdefs;
 import controllers.Controller;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import jdk.jfr.Description;
 import workflows.RegisterPage;
 
 public class RegisterSteps {
