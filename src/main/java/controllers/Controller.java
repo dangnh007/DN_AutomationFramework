@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import utils.ReadProperties;
+import utils.Commons.ReadProperties;
 
 import java.io.File;
 
@@ -34,21 +34,24 @@ public class Controller {
         browser = System.getProperty("browser");
 //        browser = systemProperties.getPropertyValue("browser");
         url = systemProperties.getPropertyValue("url");
+        String rootFolder = System.getProperty("user.dir");
         if (browser == null){
-                System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", rootFolder + "\\resources\\drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
         }
         else {
             switch (browser) {
                 case "firefox":
-                    System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\drivers\\geckodriver\\geckodriver.exe");
+                    System.setProperty("webdriver.gecko.driver", rootFolder + "\\resources\\drivers\\geckodriver.exe");
+                    System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+                    System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, rootFolder + "\\FireFoxLogs.txt");
                     driver = new FirefoxDriver();
                     break;
                 case "ie":
-                    System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "\\drivers\\iedriver\\IEDriverServer.exe");
+                    System.setProperty("webdriver.ie.driver", rootFolder + "\\resources\\drivers\\IEDriverServer.exe");
                     driver= new InternetExplorerDriver();
                 default:
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver\\chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", rootFolder + "\\resources\\drivers\\chromedriver.exe");
                     driver = new ChromeDriver();
             }
         }

@@ -1,27 +1,21 @@
 package workflows;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import pageUIs.LoginPageUI;
+import utils.Commons.AbstractPage;
 
 
-public class LoginPage {
-
-    private final WebDriver driver;
-    WebElement accountBtn;
-    WebElement loginBtn;
+public class LoginPage extends AbstractPage{
 
     public LoginPage(WebDriver driver){
-        this.driver = driver;
-        this.accountBtn = driver.findElement(By.xpath("//span[contains(text(),'Account')]"));
-        this.loginBtn = driver.findElement(By.xpath("//a[contains(text(),'Log In')]"));
+        super(driver);
     }
 
     public void clickOnAccountDropdown(){
-        accountBtn.click();
+        clickToElement(LoginPageUI.ACCOUNT_BTN);
     }
     public void clickOnLoginButton(){
-        loginBtn.click();
+        clickToElement(LoginPageUI.LOGIN_BTN);
     }
 
 }
