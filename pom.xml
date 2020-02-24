@@ -145,6 +145,7 @@
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
+                        <default.wait>${default.wait}</default.wait>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

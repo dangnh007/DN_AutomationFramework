@@ -18,8 +18,6 @@ public class AbstractPage {
     Actions action;
     WebDriver driver;
     WebElement element;
-    long longTimeOut = 5;
-    long shortTimeOut = 30;
     List<WebElement>elements;
     WebDriverWait waitExplixit;
     JavascriptExecutor jsExecutor;
@@ -27,7 +25,7 @@ public class AbstractPage {
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
         this.jsExecutor = (JavascriptExecutor) driver;
-        this.waitExplixit = new WebDriverWait(driver, longTimeOut);
+        this.waitExplixit = new WebDriverWait(driver, Property.getDefaultWait());
         this.action = new Actions(driver);
     }
 
