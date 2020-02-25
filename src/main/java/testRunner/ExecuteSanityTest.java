@@ -1,3 +1,5 @@
+package testRunner;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
@@ -6,7 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        tags = {"~@ignore"},
+        glue = {"stepdefs", "controllers"},
+        tags = {"@sanity"},
         monochrome = true,
         plugin = {
                 "pretty",
@@ -15,5 +18,5 @@ import org.junit.runner.RunWith;
                 "rerun:target/cucumber-reports/rerun.txt"
         }
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class ExecuteSanityTest extends AbstractTestNGCucumberTests {
 }
