@@ -1,9 +1,9 @@
-@feature-guru-01 @register
+@feature-guru-01 @login
 Feature: User Management
-  As a new user
+  As a user
   I want to login
 
   @mc-0101
-  Scenario: Login User
-    When I access to Login Function
+  Scenario: Login with correct password only
+    Given I access to Login Function
     Then I login

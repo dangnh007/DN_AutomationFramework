@@ -1,4 +1,4 @@
-@feature-guru-02
+@feature-guru-02 @register
 Feature: User Management
   As a user
   I want to register
