@@ -5,14 +5,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageUIs.AbstractPageUI;
-import workflows.HomePage;
-import workflows.LoginPage;
-import workflows.RegisterPage;
-import workflows.SiteMapPage;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 /**
@@ -22,7 +16,7 @@ public class AbstractPage {
     By by;
     Select select;
     Actions action;
-    private final WebDriver driver;
+    WebDriver driver;
     WebElement element;
     List<WebElement>elements;
     WebDriverWait waitExplixit;
@@ -264,13 +258,8 @@ public class AbstractPage {
      * @return return result as boolean (true/false)
      */
     public boolean isElementDisplayed(String locator) {
-        try {
-            element = findElement(locator);
-            return element.isDisplayed();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-
+        element = findElement(locator);
+        return element.isDisplayed();
     }
 
     /**
@@ -445,42 +434,4 @@ public class AbstractPage {
     public void waitToAlertPresence() {
         waitExplixit.until(ExpectedConditions.alertIsPresent());
     }
-
-    /**
-     * It is used to open Home Page
-     */
-    public HomePage openHomePage() {
-        waitToElementVisible(AbstractPageUI.HOME_PAGE_LINK);
-        clickToElement(AbstractPageUI.HOME_PAGE_LINK);
-        return PageGeneratorManager.getHomePage(driver);
-    }
-
-    /**
-     * It is used to open Login Page
-     */
-    public LoginPage openLoginPage() {
-        waitToElementVisible(AbstractPageUI.LOGIN_PAGE_LINK);
-        clickToElement(AbstractPageUI.LOGIN_PAGE_LINK);
-        return PageGeneratorManager.getLoginPage(driver);
-    }
-
-    /**
-     * It is used to open Register Page
-     */
-    public RegisterPage openRegisterPage() {
-        waitToElementVisible(AbstractPageUI.REGISTER_PAGE_LINK);
-        clickToElement(AbstractPageUI.REGISTER_PAGE_LINK);
-        return PageGeneratorManager.getRegisterPage(driver);
-    }
-
-    /**
-     * It is used to open Site Map Page
-     */
-    public SiteMapPage openSiteMapPage() {
-        waitToElementVisible(AbstractPageUI.SITEMAP_PAGE_LINK);
-        clickToElement(AbstractPageUI.SITEMAP_PAGE_LINK);
-        return PageGeneratorManager.getSiteMapPage(driver);
-    }
-
-
 }

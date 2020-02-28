@@ -1,15 +1,15 @@
 package stepdefs;
 
-import controllers.Controller;
+import controllers.DriverController;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import workflows.RegisterPage;
 
 public class RegisterSteps {
     private final RegisterPage registerPage;
-    private final Controller controller;
+    private final DriverController controller;
 
-    public RegisterSteps(Controller controller){
+    public RegisterSteps(DriverController controller){
         this.controller = controller;
         registerPage = new RegisterPage(this.controller.getDriver());
     }
@@ -22,10 +22,5 @@ public class RegisterSteps {
 
     @Then("^I register$")
     public void iRegister(){
-    }
-
-    @Then("^I access SiteMap Page$")
-    public void accessToSiteMapPage() {
-        registerPage.openSiteMapPage();
     }
 }

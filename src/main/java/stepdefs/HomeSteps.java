@@ -1,14 +1,13 @@
 package stepdefs;
 
-import controllers.Controller;
+import controllers.DriverController;
 import workflows.HomePage;
-import workflows.LoginPage;
 
 public class HomeSteps {
-    private final Controller controller;
+    private final DriverController controller;
     private final HomePage homePage;
 
-    public HomeSteps(Controller controller){
+    public HomeSteps(DriverController controller){
         this.controller = controller;
         this.homePage = new HomePage(this.controller.getDriver());
     }
