@@ -24,4 +24,9 @@ public class LoginSteps {
     public void login(){
 
     }
+
+    @When("^I access Register Page$")
+    public void accessToRegisterPage(){
+        loginPage.openRegisterPage();
+    }
 }

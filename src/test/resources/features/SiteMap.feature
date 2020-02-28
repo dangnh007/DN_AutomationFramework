@@ -5,6 +5,7 @@ Feature: User Management
 
   @mc-0301 @sanity @smoke
   Scenario: Register New User
-    Given I access to Orders and Returns page
-    When I order and return by "Email"
-    Then I order successfully
+    Given I access Login Page
+    When I access Register Page
+    Then I access SiteMap Page
+    Then I access HomePage Page

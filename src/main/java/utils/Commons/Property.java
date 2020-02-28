@@ -1,9 +1,17 @@
 package utils.Commons;
 
-public class Property {
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
 
+public class Property {
+    String location;
     private static final int DEFAULT_WAIT = 5;
     private static String DEFAULT_BROWSER = "chrome";
+
+    public Property(String location) {
+        this.location = location;
+    }
 
     /**
      * Gets the maximum wait time the application should wait until an element is present/visible/etc. This default
@@ -43,5 +51,17 @@ public class Property {
             }
         }
         return DEFAULT_BROWSER;
+    }
+
+    public String getPropertyValue(String key){
+        Properties prop = new Properties();
+        try {
+            InputStream input = new FileInputStream(location);
+            prop.load(input);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return prop.getProperty(key);
     }
 }

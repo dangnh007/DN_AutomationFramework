@@ -3,23 +3,20 @@ package workflows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pageUIs.RegisterPageUI;
+import utils.Commons.AbstractPage;
 
-public class RegisterPage {
-    private final WebDriver driver;
-    WebElement accountBtn;
-    WebElement registerBtn;
+public class RegisterPage extends AbstractPage {
 
     public RegisterPage(WebDriver driver){
-        this.driver = driver;
-        this.accountBtn = driver.findElement(By.xpath("//span[contains(text(),'Account')]"));
-        this.registerBtn = driver.findElement(By.xpath("//a[contains(text(),'Register')]"));
+        super(driver);
     }
 
-    public void clickOnAccountDropdown(){
-        accountBtn.click();
+    public void clickOnAccountDropdown() {
+        clickToElement(RegisterPageUI.ACCOUNT_BTN);
     }
 
     public void clickOnRegisterButton(){
-        registerBtn.click();
+        clickToElement(RegisterPageUI.REGISTER_BTN);
     }
 }

@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefs", "controllers"},
-        tags = {"~@ignore"},
+        tags = {"@mc-0301"},
         monochrome = true,
         plugin = {
                 "pretty",

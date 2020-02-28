@@ -23,4 +23,9 @@ public class RegisterSteps {
     @Then("^I register$")
     public void iRegister(){
     }
+
+    @Then("^I access SiteMap Page$")
+    public void accessToSiteMapPage() {
+        registerPage.openSiteMapPage();
+    }
 }
