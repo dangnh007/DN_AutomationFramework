@@ -18,8 +18,7 @@ import java.io.File;
 public class Controller {
     String url = "";
     private WebDriver driver;
-    private Property systemProperties = new Property(Constans.SYSTEM_PROPERTIES_LOCATION);
-
+    private ReadProperties systemProperties = new ReadProperties(".\\src\\test\\resources\\config\\system.properties");
     public WebDriver getDriver() {
         return driver;
     }
