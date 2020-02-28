@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import utils.Commons.Constans;
 import utils.Commons.Property;
 import utils.Commons.ReadProperties;
 
@@ -21,7 +20,6 @@ public class Controller {
     private WebDriver driver;
     private Property systemProperties = new Property(Constans.SYSTEM_PROPERTIES_LOCATION);
 
-
     public WebDriver getDriver() {
         return driver;
     }
@@ -30,32 +28,6 @@ public class Controller {
         this.driver = driver;
     }
 
-    /***
-     * Day la commit 1 and 2
-     */
-
-    public void setupController() {
-        url = systemProperties.getPropertyValue("url");
-        String rootFolder = System.getProperty("user.dir");
-            switch (Property.getDefaultBrowser()) {
-                case "firefox":
-                    System.setProperty("webdriver.gecko.driver", rootFolder + "\\resources\\drivers\\geckodriver.exe");
-                    System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-                    System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, rootFolder + "\\FireFoxLogs.txt");
-                    driver = new FirefoxDriver();
-                    break;
-                case "ie":
-                    System.setProperty("webdriver.ie.driver", rootFolder + "\\resources\\drivers\\IEDriverServer.exe");
-                    driver= new InternetExplorerDriver();
-                    break;
-                case "chrome":
-                    System.setProperty("webdriver.chrome.driver", rootFolder + "\\resources\\drivers\\chromedriver.exe");
-                    driver = new ChromeDriver();
-                    break;
-            }
-        driver.get(url);
-        driver.manage().window().maximize();
-    }
 
     /***
      * Day la commit 1 and 2
