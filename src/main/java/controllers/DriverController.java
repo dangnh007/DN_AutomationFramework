@@ -14,16 +14,11 @@ import utils.Commons.ReadProperties;
 
 import java.io.File;
 
-<<<<<<< HEAD:src/main/java/controllers/DriverController.java
 public abstract class DriverController {
     protected WebDriver driver;
-
-=======
-public class Controller {
     String url = "";
-    private WebDriver driver;
     private ReadProperties systemProperties = new ReadProperties(".\\src\\test\\resources\\config\\system.properties");
->>>>>>> parent of f662fe5... Completed:src/main/java/controllers/Controller.java
+
     public WebDriver getDriver() {
         if (driver == null) {
             createDriver();
@@ -34,9 +29,8 @@ public class Controller {
     public void setDriver(WebDriver driver) {
         this.driver = driver;
     }
-<<<<<<< HEAD:src/main/java/controllers/DriverController.java
+
     protected abstract void createDriver();
-=======
 
     /***
      * Day la commit 1 and 2
@@ -64,7 +58,6 @@ public class Controller {
         driver.get(url);
         driver.manage().window().maximize();
     }
->>>>>>> parent of f662fe5... Completed:src/main/java/controllers/Controller.java
 
     public void teardownController(Scenario scenario) throws Exception {
         if (scenario.isFailed()){
