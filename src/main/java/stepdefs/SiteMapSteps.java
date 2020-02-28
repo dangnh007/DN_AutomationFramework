@@ -10,12 +10,12 @@ public class SiteMapSteps {
 
     private SiteMapPage siteMapPage;
     private HomePage homePage;
-    private DriverController controller;
+    private DriverController driverController;
 
-    public SiteMapSteps(DriverController controller){
-        this.controller = controller;
-        this.siteMapPage = new SiteMapPage(this.controller.getDriver());
-        this.homePage = new HomePage(this.controller.getDriver());
+    public SiteMapSteps(DriverController driverController){
+        this.driverController = driverController;
+        this.siteMapPage = new SiteMapPage(this.driverController.getDriver());
+        this.homePage = new HomePage(this.driverController.getDriver());
     }
 
     @Given("^I access Login Page$")
