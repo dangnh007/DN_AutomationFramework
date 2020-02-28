@@ -1,15 +1,15 @@
 package stepdefs;
 
-import controllers.DriverController;
+import controllers.Controller;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import workflows.RegisterPage;
 
 public class RegisterSteps {
     private final RegisterPage registerPage;
-    private final DriverController controller;
+    private final Controller controller;
 
-    public RegisterSteps(DriverController controller){
+    public RegisterSteps(Controller controller){
         this.controller = controller;
         registerPage = new RegisterPage(this.controller.getDriver());
     }

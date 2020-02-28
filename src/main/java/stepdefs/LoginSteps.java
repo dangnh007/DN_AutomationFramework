@@ -1,15 +1,15 @@
 package stepdefs;
 
-import controllers.DriverController;
+import controllers.Controller;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import workflows.LoginPage;
 
 public class LoginSteps {
-    private final DriverController controller;
+    private final Controller controller;
     private final LoginPage loginPage;
 
-    public LoginSteps(DriverController controller){
+    public LoginSteps(Controller controller){
         this.controller = controller;
         this.loginPage = new LoginPage(this.controller.getDriver());
     }

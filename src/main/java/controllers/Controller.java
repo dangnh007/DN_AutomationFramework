@@ -9,20 +9,19 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import utils.Commons.Constans;
 import utils.Commons.Property;
 import utils.Commons.ReadProperties;
 
 import java.io.File;
 
-public abstract class DriverController {
-    protected WebDriver driver;
+
+public class Controller {
     String url = "";
-    private ReadProperties systemProperties = new ReadProperties(".\\src\\test\\resources\\config\\system.properties");
+    private WebDriver driver;
+    private Property systemProperties = new Property(Constans.SYSTEM_PROPERTIES_LOCATION);
 
     public WebDriver getDriver() {
-        if (driver == null) {
-            createDriver();
-        }
         return driver;
     }
 
@@ -30,7 +29,31 @@ public abstract class DriverController {
         this.driver = driver;
     }
 
-    protected abstract void createDriver();
+    /***
+     * Day la commit 1 and 2
+     */
+
+    public void setupController() {
+        url = systemProperties.getPropertyValue("url");
+            switch (Property.getDefaultBrowser()) {
+                case "firefox":
+                    System.setProperty("webdriver.gecko.driver", Constans.DRIVER_LOCATION + "geckodriver.exe");
+                    System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+                    System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, Constans.ROOT_LOCATION + "\\FireFoxLogs.txt");
+                    driver = new FirefoxDriver();
+                    break;
+                case "ie":
+                    System.setProperty("webdriver.ie.driver", Constans.DRIVER_LOCATION + "IEDriverServer.exe");
+                    driver= new InternetExplorerDriver();
+                    break;
+                case "chrome":
+                    System.setProperty("webdriver.chrome.driver", Constans.DRIVER_LOCATION + "chromedriver.exe");
+                    driver = new ChromeDriver();
+                    break;
+            }
+        driver.get(url);
+        driver.manage().window().maximize();
+    }
 
     /***
      * Day la commit 1 and 2
