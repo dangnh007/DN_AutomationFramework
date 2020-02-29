@@ -14,11 +14,18 @@ import utils.Commons.ReadProperties;
 
 import java.io.File;
 
+<<<<<<< HEAD:src/main/java/controllers/Controller.java
 
 public class Controller {
     String url = "";
     private WebDriver driver;
     private ReadProperties systemProperties = new ReadProperties(".\\src\\test\\resources\\config\\system.properties");
+=======
+public class Controller {
+    String url = "";
+    private WebDriver driver;
+    private Property systemProperties = new Property(Constans.SYSTEM_PROPERTIES_LOCATION);
+>>>>>>> parent of deaaf8a... Completed:src/main/java/controllers/DriverController.java
     public WebDriver getDriver() {
         return driver;
     }
@@ -27,13 +34,17 @@ public class Controller {
         this.driver = driver;
     }
 
+<<<<<<< HEAD:src/main/java/controllers/Controller.java
 
+=======
+>>>>>>> parent of deaaf8a... Completed:src/main/java/controllers/DriverController.java
     /***
      * Day la commit 1 and 2
      */
 
     public void setupController() {
         url = systemProperties.getPropertyValue("url");
+<<<<<<< HEAD:src/main/java/controllers/Controller.java
         String rootFolder = System.getProperty("user.dir");
             switch (Property.getDefaultBrowser()) {
                 case "firefox":
@@ -48,6 +59,21 @@ public class Controller {
                     break;
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver", rootFolder + "\\resources\\drivers\\chromedriver.exe");
+=======
+            switch (Property.getDefaultBrowser()) {
+                case "firefox":
+                    System.setProperty("webdriver.gecko.driver", Constans.DRIVER_LOCATION + "geckodriver.exe");
+                    System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+                    System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, Constans.ROOT_LOCATION + "\\FireFoxLogs.txt");
+                    driver = new FirefoxDriver();
+                    break;
+                case "ie":
+                    System.setProperty("webdriver.ie.driver", Constans.DRIVER_LOCATION + "IEDriverServer.exe");
+                    driver= new InternetExplorerDriver();
+                    break;
+                case "chrome":
+                    System.setProperty("webdriver.chrome.driver", Constans.DRIVER_LOCATION + "chromedriver.exe");
+>>>>>>> parent of deaaf8a... Completed:src/main/java/controllers/DriverController.java
                     driver = new ChromeDriver();
                     break;
             }

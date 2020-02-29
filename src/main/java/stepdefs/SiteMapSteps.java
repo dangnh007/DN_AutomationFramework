@@ -13,8 +13,8 @@ public class SiteMapSteps {
 
     private SiteMapPage siteMapPage;
     private HomePage homePage;
-
     private Controller controller;
+
 
     public SiteMapSteps(Controller controller){
         this.controller = controller;
